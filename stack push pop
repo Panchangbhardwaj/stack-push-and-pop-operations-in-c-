@@ -1,0 +1,58 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdlib.h>
+void main()
+{ clrscr();
+  int n,stack[20],res,top=-1,element,del;
+  char a,r;
+  cout<<"ENTER THE SIZE OF STACK\n";
+  cin>>n;
+  do
+  { clrscr();
+    cout<<"\t\tMENU\t";
+    cout<<"\n\n1.PUSH\n2.POP\n";
+    cin>>res;
+    if(res==1)
+    {
+    if(top==n-1)
+       {cout<<"\STACK OVER FLOW ";
+	getch();
+       exit(0);
+       }
+    else
+    {  cout<<"ENTER THE ELEMENT TO PUSH\n";
+       cin>>element;
+       top++;
+       stack[top]=element;
+    }
+    cout<<"CURRENTLY IN STACK\n";
+    for(int i=top;i>=0;i--)
+    {
+    cout<<stack[i]<<"\n";
+    }
+    }
+    else
+    {
+      if(top==-1)
+      {
+       cout<<"\n STACK UNDERFLOW\n";
+
+      }
+      else
+      {
+      del=stack[top];
+      top--;
+      cout<<"\ELEMENT DELETED IS  " <<del<<" NOW STACK IS \n";
+      for(int i=top;i>=0;i--)
+      {cout<<stack[i]<<"\n";
+      }
+      }
+
+    }
+    cout<<"\n IF YOU WISH TO EXIT PRESS e OR ELSE PRESS ANY OTHER KEY..";
+    a=getch();
+
+  }while(a!='e');
+
+getch();
+}
